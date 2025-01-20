@@ -18,3 +18,16 @@
     width: 45% ;
     background-color: aqua;
 }
+.slider{
+    display: flex;
+    overflow: hidden;
+    gap: 10px;
+}
+.slider-conatiner{
+    display: flex;
+    align-items: center;
+}
+
+.thumbnail{
+    height: 70%;
+}

@@ -1,16 +1,15 @@
-const getImage = async  ()=>{
-    try{
+const getImage = async () => {
+    try {
         let res = await fetch('https://picsum.photos/v2/list?page=1&limit=5')
         let info = await res.json()
-        // console.log(info)
         dispayImage(info)
     }
-    catch(error){
+    catch (error) {
         alert("error while fetching Info Please try again afte some time")
     }
 }
 
-const dispayImage = (info=[])=>{
+const dispayImage = (info = []) => {
     const container = document.querySelector('.slider')
     const thumbnail = document.querySelector('.thumbnail')
 
@@ -21,20 +20,44 @@ const dispayImage = (info=[])=>{
     thumbnailImg.style.objectFit = 'cover'
     thumbnail.append(thumbnailImg)
 
-    const all_image = info.map((url,index)=>{
+    const all_image = info.map((url) => {
         const img = document.createElement('img')
         img.src = url.download_url
         img.height = 100
         img.width = 100
         img.style.objectFit = 'cover'
-        
-        img.addEventListener('click',()=>{
+
+        img.addEventListener('click', () => {
             thumbnailImg.src = url.download_url
         })
         return (
-          img
+            img
         )
-    })  
+    })
     container.append(...all_image)
+
+    let currentIndex = 0
+    let prevButton = document.querySelector('#prev')
+    let nextButton = document.querySelector('#next')
+
+    const sliderFunc = () => {
+        container.scrollTo({
+            left: currentIndex * (100 + 10),
+            behavior:'smooth'
+        })
+    }
+    prevButton.addEventListener('click', () => {
+        if (currentIndex > 0) {
+            currentIndex--
+            sliderFunc()
+        }
+    })
+
+    nextButton.addEventListener('click', () => {
+        if (currentIndex < info.length) {
+            currentIndex++
+            sliderFunc()
+        }
+    })
 }
 getImage()

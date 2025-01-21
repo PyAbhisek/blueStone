@@ -33,9 +33,12 @@ body {
 
 .slider {
     display: flex;
-    overflow: hidden;
+    overflow: scroll;
     gap: 10px;
 }
+.slider::-webkit-scrollbar {
+    display: none;
+  }
 
 .slider-conatiner {
     display: flex;

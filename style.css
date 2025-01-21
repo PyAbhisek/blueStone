@@ -217,6 +217,12 @@ body {
     background-color: white;
     color: #f15d47;
 }
+.variants button.selected {
+    background-color: #f15d47;
+    color: white;
+    border: 1px solid #f15d47;
+}
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;

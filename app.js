@@ -45,7 +45,7 @@ const dispayImage = (info = []) => {
     const sliderFunc = () => {
         container.scrollTo({
             left: currentIndex * (100 + 10),
-            behavior:'smooth'
+            behavior: 'smooth'
         })
     }
     prevButton.addEventListener('click', () => {
@@ -61,29 +61,43 @@ const dispayImage = (info = []) => {
             sliderFunc()
         }
     })
-    
+
 }
 getImage()
 
-const quantityInput = document.querySelector(".product-qty");
-let button = document.querySelector('.add-to-cart')
-button.addEventListener('click',()=>{
-    alert(` ${quantityInput.value} Apple MacBook AIR Apple M2 added to cart `)
-})
+
 
 document.addEventListener("DOMContentLoaded", () => {
+    const quantityInput = document.querySelector(".product-qty");
+    const button = document.querySelector('.add-to-cart')
     const minusButton = document.querySelector(".qty-count--minus");
     const addButton = document.querySelector(".qty-count--add");
+    const variantButtons = document.querySelectorAll('.variants button')
+
+   
+    button.addEventListener('click', () => {
+        alert(` ${quantityInput.value} Apple MacBook AIR Apple M2 added to cart `)
+    })
+ 
 
     const updateQuantity = (change) => {
-      const min =  0;
-      let currentValue = parseInt(quantityInput.value, 10) || 0;
-      currentValue += change;
-      if (currentValue >= min) {
-        quantityInput.value = currentValue;
-      }
+        const min = 0;
+        let currentValue = parseInt(quantityInput.value, 10) || 0;
+        currentValue += change;
+        if (currentValue >= min) {
+            quantityInput.value = currentValue;
+        }
     };
 
     minusButton.addEventListener("click", () => updateQuantity(-1));
     addButton.addEventListener("click", () => updateQuantity(1));
-  });
+
+    variantButtons.forEach((buttons)=>{
+        buttons.addEventListener('click',()=>{
+            variantButtons.forEach((btn)=>btn.classList.remove('selected'))
+
+            buttons.classList.add('selected')
+        })
+    })
+});
+

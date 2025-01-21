@@ -106,16 +106,13 @@ body {
 
 .variants>button {
     padding: 7px 13px;
-    background-color: transparent;
-    border: 1px solid black;
+      border: 1px solid #f15d47;
+    background-color: white;
+    color: #f15d47;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.variants>button:hover {
-    background-color: rgba(235, 233, 233, 0.784);
-    transition: background-color 0.3s ease;
-}
 
 .quantity-heading{
     margin-top: 0.5rem;

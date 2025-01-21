@@ -20,7 +20,11 @@ body {
 
 .Carousel {
     width: 55%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
+
 
 .info {
     width: 45%;

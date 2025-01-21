@@ -64,3 +64,12 @@ const dispayImage = (info = []) => {
     
 }
 getImage()
+
+const confirmation = ()=>{
+let button = document.querySelector('.add-to-cart')
+button.addEventListener('click',()=>{
+    alert("Apple MacBook AIR Apple M2 added to cart")
+})
+}
+
+confirmation()

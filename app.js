@@ -1,8 +1,10 @@
 const getImage = async () => {
+    let loading = document.querySelector(".loader")
     try {
         let res = await fetch('https://picsum.photos/v2/list?page=1&limit=5')
         let info = await res.json()
         dispayImage(info)
+        loading.style.display = 'none'
     }
     catch (error) {
         alert("error while fetching Info Please try again afte some time")
@@ -26,7 +28,7 @@ const dispayImage = (info = []) => {
         img.height = 100
         img.width = 100
         img.style.objectFit = 'cover'
-
+        img.style.cursor = 'pointer'
         img.addEventListener('click', () => {
             thumbnailImg.src = url.download_url
         })
@@ -59,5 +61,6 @@ const dispayImage = (info = []) => {
             sliderFunc()
         }
     })
+    
 }
 getImage()

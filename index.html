@@ -5,27 +5,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <title>Product Display Page</title>
 </head>
 
 <body>
-
+    <div class="loader">
+        <p>Loading... </p>
+    </div>
     <div class="container">
         <div class="Carousel">
             <div class="thumbnail">
-                
+
             </div>
             <div class="slider-conatiner">
-                <button id="prev">Prev</button>
-                <div class="slider">
 
+                <img src="/Assests/back.png" alt="back button" height="25px" width="25px" id="prev" />
+                <div class="slider">
                 </div>
-                <button id="next">Next</button>
+                <img src="/Assests/nextIcon.png" alt="next button" height="25px" width="25px" id="next" />
+
             </div>
 
         </div>
         <div class="info">
+            <div class="title-conatiner">
+                <p>Apple MacBook AIR Apple M2 - (8 GB/512 GB SSD/Mac OS Monterey) MLXX3HN/A (13.6 Inch, Space Grey, 1.24
+                    Kg)</p>
+            </div>
+            <div class="info-body">
+                <p class="ratings">1,161 Ratings & 59 Reviews</p>
 
+                <h4 class="price-heading">Special price</h4>
+                <p class="price"><span class="sale-price"> ₹85,990</span>
+                    <del>₹1,19,900</del>
+                    <span class="offer">28% off</span>
+                </p>
+                <div class="offers">
+
+                    <h4> Available offers</h4>
+
+                    <p> - Bank Offer5% Unlimited Cashback on Flipkart Axis Bank Credit CardT&C</p>
+
+                    <p> - Bank Offer10% off up to ₹1250 on HDFC Bank Credit Card Transactions. Min Txn Value: ₹4,999T&C</p>
+
+                    <p> - Bank Offer10% off up to ₹1,500 on HDFC Bank Credit Card EMI Transactions.</p>
+
+                    <p> - Special PriceGet extra 28% off (price inclusive of cashback/coupon)T&C</p>
+                </div>
+
+                <h4 class="variant-heading">Variants</h4>
+                <div class="variants">
+                    <button>Black (512gb)</button>
+                    <button>Blue (512gb)</button>
+                    <button>Grey (512gb)</button>
+                    <button>Pink (512gb)</button>
+                </div>
+                <h4 class="quantity-heading">Quantity</h4>
+                <div class="quantity">
+                    <button class="qty-count qty-count--minus" type="button">-</button>
+                    <input class="product-qty" type="text" name="product-qty" min="0" max="10" value="1">
+                    <button class="qty-count qty-count--add" type="button">+</button>
+                </div>
+               
+                <div class="checkout">
+                    <button class=" checkout-btn buyNow">Buy Now</button>
+                    <button class="checkout-btn add-to-cart">Add to cart</button>
+                </div>
+
+            </div>
 
         </div>
 

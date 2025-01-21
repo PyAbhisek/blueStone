@@ -65,11 +65,25 @@ const dispayImage = (info = []) => {
 }
 getImage()
 
-const confirmation = ()=>{
+const quantityInput = document.querySelector(".product-qty");
 let button = document.querySelector('.add-to-cart')
 button.addEventListener('click',()=>{
-    alert("Apple MacBook AIR Apple M2 added to cart")
+    alert(` ${quantityInput.value} Apple MacBook AIR Apple M2 added to cart `)
 })
-}
 
-confirmation()
+document.addEventListener("DOMContentLoaded", () => {
+    const minusButton = document.querySelector(".qty-count--minus");
+    const addButton = document.querySelector(".qty-count--add");
+
+    const updateQuantity = (change) => {
+      const min =  0;
+      let currentValue = parseInt(quantityInput.value, 10) || 0;
+      currentValue += change;
+      if (currentValue >= min) {
+        quantityInput.value = currentValue;
+      }
+    };
+
+    minusButton.addEventListener("click", () => updateQuantity(-1));
+    addButton.addEventListener("click", () => updateQuantity(1));
+  });

@@ -217,6 +217,11 @@ body {
     background-color: white;
     color: #f15d47;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 @media (min-width: 1025px) and (max-width: 1200px) {
 
